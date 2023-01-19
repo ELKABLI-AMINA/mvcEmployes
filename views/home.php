@@ -5,8 +5,8 @@ $employes = $data->getAllEmployes();
 ?>
 
 <div class="container">
-                <div class="row">
-                                <div class="col-md-8 mx-auto">
+                <div class="row my-4">
+                                <div class="col-md-10 mx-auto">
 
  <div class="card">
                 <div class="card-body bg-light">
@@ -25,12 +25,17 @@ $employes = $data->getAllEmployes();
    </tr>
  </thead>
  <tbody>
-   <tr>
-     <th scope="row">1</th>
-     <td>Mark</td>
-     <td>Otto</td>
-     <td>@mdo</td>
-   </tr>
+   <?php foreach($employes as $employe): ?>
+          <tr>
+            <th scope="row"><?= $employe['nom'].''.$employe['prenom'] ?></th>
+            <td><?=$employe['matricule']  ?></td>
+            <td><?=$employe['depart']  ?></td>
+            <td><?=$employe['poste']  ?></td>
+            <td><?=$employe['date_emb']  ?></td>
+            <td><?=$employe['statut']  ?></td>
+           
+          </tr>
+    <?php endforeach ?>
  </tbody>
 </table>
 
